@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - SITTA Universitas Terbuka</title>
+  <link rel="icon" type="image/webp" href="assets/logo/logo-ut-small-transparent-300x226.png.webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="dashboard.html" class="brand">
+      <img src="assets/logo/logo-ut-small-transparent-300x226.png.webp" alt="Logo Universitas Terbuka" class="brand-logo">
+      SITTA Dashboard
+    </a>
+    <div class="nav-links">
+      <span id="navUserInfo" style="font-size: 0.9rem; color: #cbd5e1;"></span>
+      <a href="dashboard.html" class="nav-link active">Menu Utama</a>
+      <a href="stok.html" class="nav-link">Stok Bahan Ajar</a>
+      <a href="tracking.html" class="nav-link">Pelacakan DO</a>
+      <button class="btn-logout" onclick="handleLogout()">Keluar</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Salam Dinamis -->
+    <div class="greeting-banner">
+      <h1 id="greetingText">Selamat Datang</h1>
+      <p id="greetingSubtitle" style="margin-top: 0.35rem; opacity: 0.9;">
+        Sistem Distribusi dan Monitoring Bahan Ajar Terpadu
+      </p>
+    </div>
+
+    <!-- Modul Pencarian Cepat DO di Dashboard -->
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Cek Cepat Status Pengiriman (Delivery Order)</h2>
+      </div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <input type="text" id="quickDoInput" class="form-control" style="flex: 1; min-width: 250px;" placeholder="Masukkan Nomor DO (Contoh: 2023001234 atau 2023005678)">
+        <button class="btn btn-primary" onclick="quickTrackDO()">Cari DO</button>
+      </div>
+      <div id="quickDoResult" style="margin-top: 1.5rem; display: none;"></div>
+    </div>
+
+    <!-- Menu Utama Navigasi -->
+    <h2 style="color: var(--primary); margin-bottom: 1rem;">Layanan & Modul Utama</h2>
+    <div class="menu-grid">
+      <!-- 1. Informasi Bahan Ajar -->
+      <a href="stok.html" class="menu-item">
+        <div>
+          <h3>Informasi Bahan Ajar</h3>
+          <p>Katalog Buku Materi Pokok (BMP), ketersediaan stok fisik gudang, dan pembaruan data edisi.</p>
+        </div>
+        <span class="menu-cta">Buka Katalog &rarr;</span>
+      </a>
+
+      <!-- 2. Pelacakan Pengiriman -->
+      <a href="tracking.html" class="menu-item">
+        <div>
+          <h3>Pelacakan Pengiriman</h3>
+          <p>Lacak posisi paket DO bahan ajar mahasiswa secara real-time via ekspedisi rekanan.</p>
+        </div>
+        <span class="menu-cta">Lacak Paket &rarr;</span>
+      </a>
+
+      <!-- 3. Monitoring DO Bahan Ajar -->
+      <div class="menu-item" onclick="alert('Modul Monitoring DO Bahan Ajar sedang dalam sinkronisasi server.')" style="cursor: pointer;">
+        <div>
+          <h3>Monitoring Progress DO</h3>
+          <p>Pantau status progress pencetakan, packing paket, hingga serah terima ekspedisi.</p>
+        </div>
+        <span class="menu-cta">Pantau Progress &rarr;</span>
+      </div>
+
+      <!-- 4. Rekap Bahan Ajar -->
+      <div class="menu-item" onclick="alert('Rekapitulasi kuantitas bahan ajar per UPBJJ per semester.')" style="cursor: pointer;">
+        <div>
+          <h3>Rekap Bahan Ajar</h3>
+          <p>Ringkasan total jumlah BMP yang dikeluarkan, kebutuhan untuk pencetakan ulang, dan alokasi per UPBJJ.</p>
+        </div>
+        <span class="menu-cta">Lihat Rekap &rarr;</span>
+      </div>
+
+      <!-- 5. Riwayat Transaksi -->
+      <div class="menu-item" onclick="alert('Riwayat transaksi DO semester berjalan.')" style="cursor: pointer;">
+        <div>
+          <h3>Riwayat Transaksi Bahan Ajar</h3>
+          <p>Log lengkap riwayat permintaan, pengiriman, dan penyelesaian DO mahasiswa.</p>
+        </div>
+        <span class="menu-cta">Buka Riwayat &rarr;</span>
+      </div>
+
+      <!-- 6. Laporan -->
+      <div class="menu-item" onclick="alert('Menu Laporan Distribusi: Ekspor PDF/Excel tersedia pada penutupan buku semester.')" style="cursor: pointer;">
+        <div>
+          <h3>Laporan & Statistik</h3>
+          <p>Laporan distribusi semester, evaluasi SLA pengiriman ekspedisi, dan laporan retur.</p>
+        </div>
+        <span class="menu-cta">Unduh Laporan &rarr;</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Universitas Terbuka - Sistem Layanan Pencetakan dan Distribusi Bahan Ajar | Radendy Bahtiar
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

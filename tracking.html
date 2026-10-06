@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pelacakan DO - SITTA Universitas Terbuka</title>
+  <link rel="icon" type="image/webp" href="assets/logo/logo-ut-small-transparent-300x226.png.webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="dashboard.html" class="brand">
+      <img src="assets/logo/logo-ut-small-transparent-300x226.png.webp" alt="Logo Universitas Terbuka" class="brand-logo">
+      SITTA Pelacakan
+    </a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="nav-link">Menu Utama</a>
+      <a href="stok.html" class="nav-link">Stok Bahan Ajar</a>
+      <a href="tracking.html" class="nav-link active">Pelacakan DO</a>
+      <button class="btn-logout" onclick="handleLogout()">Keluar</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Pelacakan Delivery Order (DO) Bahan Ajar</h2>
+      </div>
+
+      <form id="formTracking" onsubmit="event.preventDefault(); executeSearchTracking();">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <input type="text" id="trackingDoInput" class="form-control" style="flex: 1; min-width: 260px;" placeholder="Ketik nomor DO (Contoh: 2023001234 atau 2023005678)" required>
+          <button type="submit" class="btn btn-primary">Lacak Sekarang</button>
+        </div>
+      </form>
+
+      <!-- Tempat render hasil tracking -->
+      <div id="trackingResultArea" style="margin-top: 2rem;"></div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 Universitas Terbuka - Sistem Layanan Pencetakan dan Distribusi Bahan Ajar | Radendy Bahtiar
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

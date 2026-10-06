@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk | SITTA Bahan Ajar - Universitas Terbuka</title>
+  <link rel="icon" type="image/webp" href="assets/logo/logo-ut-small-transparent-300x226.png.webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="brand">
+      SITTA Bahan Ajar
+    </a>
+  </header>
+
+  <main class="login-wrapper">
+    <div class="login-card">
+      <img src="assets/logo/logo-ut-small-transparent-300x226.png.webp" alt="Logo Universitas Terbuka" class="login-logo">
+      <div class="login-header">
+        <h2>Masuk ke SITTA</h2>
+        <p>Sistem Informasi Pencetakan dan Distribusi Bahan Ajar</p>
+      </div>
+
+      <!-- Kotak Pesan Error -->
+      <div id="loginAlert" class="alert alert-danger" style="display: none;"></div>
+
+      <form id="formLogin">
+        <div class="form-group">
+          <label for="email">Email UT</label>
+          <input type="email" id="email" class="form-control" placeholder="nama@ut.ac.id" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Kata Sandi</label>
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+      </form>
+
+      <div class="login-links">
+        <button type="button" id="btnForgotPassword">Lupa kata sandi?</button>
+        <button type="button" id="btnSignUp">Daftar akun</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Lupa Sandi -->
+  <div class="modal" id="modalForgot">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modalForgot')">&times;</button>
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Reset Kata Sandi</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+        Masukkan email terdaftar Anda. Tautan pemulihan kata sandi akan dikirimkan ke email Anda.
+      </p>
+      <div class="form-group">
+        <label for="forgotEmail">Email Akun UT</label>
+        <input type="email" id="forgotEmail" class="form-control" placeholder="nama@ut.ac.id">
+      </div>
+      <button type="button" class="btn btn-primary btn-block" onclick="handleForgotSubmit()">Kirim Tautan Reset</button>
+    </div>
+  </div>
+
+  <!-- Modal Sign Up / Registrasi -->
+  <div class="modal" id="modalRegister">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modalRegister')">&times;</button>
+      <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Pendaftaran Akun Baru</h3>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+        Daftarkan akun staf/pengelola UPBJJ untuk akses operasional SITTA.
+      </p>
+      <div class="form-group">
+        <label for="regNama">Nama Lengkap</label>
+        <input type="text" id="regNama" class="form-control" placeholder="Nama & Gelar">
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email UT Resmi</label>
+        <input type="email" id="regEmail" class="form-control" placeholder="user@ut.ac.id">
+      </div>
+      <div class="form-group">
+        <label for="regPass">Kata Sandi</label>
+        <input type="password" id="regPass" class="form-control" placeholder="Minimal 6 karakter">
+      </div>
+      <button type="button" class="btn btn-accent btn-block" onclick="handleRegisterSubmit()">Daftar Sekarang</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2026 Universitas Terbuka - Sistem Layanan Pencetakan dan Distribusi Bahan Ajar | Radendy Bahtiar
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
